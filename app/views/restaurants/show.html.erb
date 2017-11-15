@@ -17,12 +17,16 @@
       <h2>Reviews</h2>
           <ol>
             <% @restaurant.reviews.each do |review| %>
-              <li><%= "#{review.content} RATING:#{review.rating} " %><i class="fa fa-star" aria-hidden="true"></i></li>
+              <li><%= "#{review.content}" %></li>
+              <% "#{review.rating}".to_i.times do %>
+              <i class="fa fa-star" aria-hidden="true"></i>
+              <% end %>
               <% end %>
           </ol>
   </div>
 </div>
 </div>
+
 
 
 
