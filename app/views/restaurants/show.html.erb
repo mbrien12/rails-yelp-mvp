@@ -21,7 +21,7 @@
 </p> 
 
 <h3>Reviews</h3>
-<%= link_to 'Add a review', new_restaurant_review_path %>
+<%= link_to 'Add a review', new_restaurant_review_path(@restaurant) %>
 <ol>
   <% @restaurant.reviews.each do |review| %>
     <li><%= "#{review.content} RATING: #{review.rating}" %> </li>
