@@ -55,7 +55,6 @@
 
 .card-wide {
   width: 100%;
-  background-color: red;
   height: 50vh;
   color: white;
   position: relative;
@@ -81,3 +80,19 @@ li {
   padding: 10px;
 }
 
+th:last-child {
+ width: 200px;
+}
+
+td {
+  padding: 30px;
+  text-align: left;
+}
+
+table {
+  margin: 60px;
+}
+
+form {
+  padding: 100px;
+}

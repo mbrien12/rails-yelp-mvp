@@ -14,15 +14,22 @@
 <div class="wrapper">
 <div class="container">
   <div class="row">
-      <h2>Reviews</h2>
-          <ol>
-            <% @restaurant.reviews.each do |review| %>
-              <li><%= "#{review.content}" %></li>
-              <% "#{review.rating}".to_i.times do %>
+        <table>
+          <tr>
+            <th></th>
+            <th>Rating</th>
+          </tr>
+          <% @restaurant.reviews.each do |review| %>
+            <tr>
+            <td><%= review.content %></td>
+            <td>
+            <% "#{review.rating}".to_i.times do %>
               <i class="fa fa-star" aria-hidden="true"></i>
               <% end %>
-              <% end %>
-          </ol>
+              </td>
+            </tr>
+          <% end %> 
+          </table>
   </div>
 </div>
 </div>
