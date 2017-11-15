@@ -1,38 +1,33 @@
-<p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Name:</strong>
-  <%= @restaurant.name %>
-</p>
-
-<p>
-  <strong>Address:</strong>
-  <%= @restaurant.address %>
-</p>
-
-<p>
-  <strong>Phone number:</strong>
-  <%= @restaurant.phone_number %>
-</p>
-
-<p>
-  <strong>Category:</strong>
-  <%= @restaurant.category %>
-</p> 
-
-<%= link_to 'Edit', edit_restaurant_path(@restaurant) %>
-        <%= link_to 'Destroy', @restaurant, method: :delete, data: { confirm: 'Are you sure?' } %>
-
-<h3>Reviews</h3>
-<%= link_to 'Add a review', new_restaurant_review_path(@restaurant) %>
-<ol>
-  <% @restaurant.reviews.each do |review| %>
-    <li><%= "#{review.content} RATING: #{review.rating}" %> </li>
-    <% end %>
-</ol>
+<div class="card-wide" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('https://source.unsplash.com/collection/312299/');">
+  <div class="card-category"><%= @restaurant.category %></div>
+  <div class="card-description">
+    <h2><%= @restaurant.name %></h2>
+    <p><%= @restaurant.address %></p>
+    <p><%= @restaurant.phone_number %></p>
+    </div>
+    <%= link_to 'Add a review', new_restaurant_review_path(@restaurant), class: "button-white" %>
   
+</div>
+
+
+<div class="wrapper">
+<div class="container">
+  <div class="row">
+      <h2>Reviews</h2>
+          <ol>
+            <% @restaurant.reviews.each do |review| %>
+              <li><%= "#{review.content} RATING:#{review.rating} " %><i class="fa fa-star" aria-hidden="true"></i></li>
+              <% end %>
+          </ol>
+  </div>
+</div>
+</div>
 
 
 
-<%= link_to 'Edit', edit_restaurant_path(@restaurant) %> |
-<%= link_to 'Back', restaurants_path %>
+
+
+
+
+
