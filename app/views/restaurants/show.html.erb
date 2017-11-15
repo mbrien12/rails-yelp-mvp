@@ -20,6 +20,9 @@
   <%= @restaurant.category %>
 </p> 
 
+<%= link_to 'Edit', edit_restaurant_path(@restaurant) %>
+        <%= link_to 'Destroy', @restaurant, method: :delete, data: { confirm: 'Are you sure?' } %>
+
 <h3>Reviews</h3>
 <%= link_to 'Add a review', new_restaurant_review_path(@restaurant) %>
 <ol>
